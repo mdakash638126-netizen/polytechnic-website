@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট | Bhola Government Polytechnic Institute</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gov: {
+                            green: '#006a4e',
+                            red: '#f42a41',
+                            darkGreen: '#004d38',
+                            lightGreen: '#e6f2ee',
+                            gold: '#d4af37'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Hind Siliguri for clean Bengali typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .ticker-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+        .ticker-content:hover {
+            animation-play-state: paused;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(100%, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+
+    <!-- ================= TOP EMERGENCY & UTILITY BAR ================= -->
+    <div class="bg-gov-darkGreen text-white text-xs py-2 px-4 border-b border-green-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4 flex-wrap justify-center">
+                <span><i class="fa-solid font-bold fa-phone text-yellow-400 mr-1"></i> হটলাইন: <b>৩৩৩</b>, <b>৯৯৯</b>, <b>১০২</b></span>
+                <span class="hidden sm:inline">|</span>
+                <span><i class="fa-solid fa-location-dot text-red-400 mr-1"></i> ভোলা সদর, ভোলা -৮৩০০</span>
+                <span class="hidden sm:inline">|</span>
+                <span><i class="fa-solid fa-envelope text-blue-300 mr-1"></i> principal@bhola.polytech.gov.bd</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleDarkMode()" class="hover:text-yellow-400 px-2 py-0.5 rounded border border-green-700 bg-green-950 text-[11px]">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline text-yellow-300"></i>
+                    <span id="themeText">ডার্ক মোড</span>
+                </button>
+                <div class="bg-green-900 px-2 py-0.5 rounded border border-green-700 text-[11px]">
+                    <span class="font-bold text-yellow-300">বাংলা</span> / <span class="opacity-70 cursor-pointer hover:underline" onclick="showToast('English language version coming soon!')">English</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HEADER & NAVBAR ================= -->
+    <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-md transition-colors">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo & Title -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-gov-green text-white rounded-full flex items-center justify-center font-bold text-xl border-2 border-yellow-400 shadow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold text-gov-green dark:text-green-400 leading-tight">ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট</h1>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Bhola Government Polytechnic Institute</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-1 font-semibold text-sm">
+                <a href="#home" class="px-3 py-2 rounded text-gov-green dark:text-green-400 font-bold hover:bg-gov-lightGreen dark:hover:bg-gray-700">হোম</a>
+                <a href="#about" class="px-3 py-2 rounded hover:text-gov-green dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-700">আমাদের কথা</a>
+                <a href="#departments" class="px-3 py-2 rounded hover:text-gov-green dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-700">টেকনোলজি</a>
+                <a href="#notices" class="px-3 py-2 rounded hover:text-gov-green dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-700">নোটিশ বোর্ড</a>
+                <a href="#eservices" class="px-3 py-2 rounded hover:text-gov-green dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-700">ই-সেবা</a>
+                <a href="#placement" class="px-3 py-2 rounded hover:text-gov-green dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-700">জব সেল</a>
+                <a href="#contact" class="px-3 py-2 rounded hover:text-gov-green dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-700">যোগাযোগ</a>
+                <a href="#portal" onclick="openPortalModal()" class="ml-2 bg-gov-green hover:bg-gov-darkGreen text-white px-4 py-2 rounded-lg shadow-sm transition flex items-center gap-1">
+                    <i class="fa-solid fa-user-lock"></i> পোর্টাল লগইন
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-2xl text-gov-green dark:text-green-400 focus:outline-none p-2">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-4 py-4 space-y-2 shadow-lg">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-gov-green font-bold">হোম</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700">আমাদের কথা</a>
+            <a href="#departments" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700">টেকনোলজি</a>
+            <a href="#notices" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700">নোটিশ বোর্ড</a>
+            <a href="#eservices" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700">শিক্ষার্থী ই-সেবা</a>
+            <a href="#placement" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700">জব প্লেসমেন্ট সেল</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-700">যোগাযোগ</a>
+            <button onclick="openPortalModal(); toggleMobileMenu();" class="w-full text-center bg-gov-green text-white py-2 rounded-lg font-bold">
+                <i class="fa-solid fa-user-lock mr-1"></i> শিক্ষার্থী পোর্টাল লগইন
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= EMERGENCY TICKER ================= -->
+    <div class="bg-red-700 text-white flex items-center px-4 py-1.5 text-sm overflow-hidden shadow-inner">
+        <div class="bg-red-900 font-bold px-3 py-0.5 rounded mr-3 text-xs shrink-0 tracking-wide">
+            <i class="fa-solid fa-bullhorn mr-1 animate-pulse"></i> জরুরি নোটিশ:
+        </div>
+        <div class="ticker-wrapper w-full">
+            <div class="ticker-content space-x-8">
+                <span>📢 ২০২৫-২০২৬ শিক্ষাবর্ষে ১ম পর্বের নতুন শিক্ষার্থীদের ওরিয়েন্টেশন আগামী ২০ নভেম্বর অনুষ্ঠিত হবে।</span>
+                <span>📌 কারিগরি শিক্ষা বোর্ডের প্রবিধান-২০২২ অনুযায়ী পর্ব সমাপনী পরীক্ষার ফরম পূরণ সংক্রান্ত বিজ্ঞপ্তি প্রকাশ।</span>
+                <span>🎓 উপবৃত্তি সংক্রান্ত আবেদনপত্র আগামী ১৫ ডিসেম্বরের মধ্যে জমা দেওয়ার নির্দেশ প্রদান করা হলো।</span>
+                <span>🎓এই ওয়েবসাইটটি ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট এর অফিসিয়াল ওয়েবসাইট না।</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section id="home" class="relative bg-gradient-to-r from-gov-darkGreen via-gov-green to-emerald-800 text-white py-16 md:py-24 px-4 overflow-hidden">
+        <!-- Background Overlay Pattern -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                <h2 class="font-bold text-xl justify-center text-white">এই ওয়েবসাইটটি ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট এর অফিসিয়াল ওয়েবসাইট না।</h2>
+                <span class="inline-block bg-yellow-400 text-gov-darkGreen text-xs md:text-sm font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                    কারিগরি শিক্ষায় মেধা ও স্কিল বিকাশ
+                </span>
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                    স্মার্ট বাংলাদেশ গঠনে <br><span class="text-yellow-300">দক্ষ ডিপ্লোমা প্রকৌশলী</span> তৈরির অঙ্গীকার
+                </h2>
+                <p class="text-sm md:text-base text-gray-100 max-w-xl leading-relaxed">
+                    ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট দক্ষিণ অঞ্চলের একটি শীর্ষস্থানীয় কারিগরি শিক্ষা প্রতিষ্ঠান। আধুনিক ল্যাব, অভিজ্ঞ শিক্ষক মণ্ডলী এবং ডিজিটাল লার্নিং পরিবেশের মাধ্যমে আমরা শিক্ষার্থীদের আন্তর্জাতিক মানের প্রকৌশলী হিসেবে গড়ে তুলছি।
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                    <a href="#notices" class="bg-yellow-400 hover:bg-yellow-300 text-gov-darkGreen font-bold px-6 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-bell mr-1"></i> সর্বশেষ নোটিশ
+                    </a>
+                    <a href="#eservices" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-6 py-3 rounded-xl shadow backdrop-blur transition">
+                        <i class="fa-solid fa-laptop-code mr-1"></i> শিক্ষার্থী সার্ভিস পোর্টাল
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Feature Cards / Stats -->
+            <div class="md:col-span-5 grid grid-cols-2 gap-4">
+                <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center hover:bg-white/20 transition">
+                    <i class="fa-solid fa-microchip text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="text-2xl font-black">৪টি</h3>
+                    <p class="text-xs text-gray-200">মূল ইঞ্জিনিয়ারিং বিভাগ</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center hover:bg-white/20 transition">
+                    <i class="fa-solid fa-user-graduate text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="text-2xl font-black">১,২০০+</h3>
+                    <p class="text-xs text-gray-200">বর্তমান শিক্ষার্থী</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center hover:bg-white/20 transition">
+                    <i class="fa-solid fa-flask text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="text-2xl font-black">১৬+</h3>
+                    <p class="text-xs text-gray-200">আধুনিক ল্যাব ও ওয়ার্কশপ</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center hover:bg-white/20 transition">
+                    <i class="fa-solid fa-briefcase text-3xl text-yellow-300 mb-2"></i>
+                    <h3 class="text-2xl font-black">৮৫%</h3>
+                    <p class="text-xs text-gray-200">জব প্লেসমেন্ট রেট</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRINCIPAL MESSAGE & ABOUT ================= -->
+    <section id="about" class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 max-w-sm text-center">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gov-green mb-4 shadow-inner">
+                        <img src="https://placehold.co/300x300/006a4e/ffffff?text=Principal+BGPI" alt="অধ্যক্ষের ছবি" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gov-green dark:text-green-400">প্রকৌশলী মীর মোশাররফ হোসেন</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">অধ্যক্ষ, ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট</p>
+                    <div class="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 flex justify-center space-x-3 text-gov-green dark:text-green-400">
+                        <span class="text-xs bg-gov-lightGreen dark:bg-gray-700 px-3 py-1 rounded-full"><i class="fa-solid fa-quote-left mr-1"></i> কারিগরি শিক্ষা সেরা শিক্ষা</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 space-y-4">
+                <div class="inline-flex items-center space-x-2 text-gov-green dark:text-green-400 font-bold text-sm bg-gov-lightGreen dark:bg-gray-800 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-landmark"></i> <span>ইনস্টিটিউট সম্পর্কে</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">ভোলা সরকারি পলিটেকনিক ইনস্টিটিউটের সংক্ষিপ্ত ইতিহাস ও পরিচিতি</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    ভোলা জেলার একমাত্র সরকারি কারিগরি উচ্চ শিক্ষা প্রতিষ্ঠান হিসেবে ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট ২০০৮ সালে তার যাত্রা শুরু করে। দ্বীপ জেলা ভোলায় কারিগরি শিক্ষার প্রসার ও দক্ষ মানবসম্পদ তৈরির লক্ষ্যে প্রতিষ্ঠানটি অনন্য অবদান রাখছে।
+                </p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    বাংলাদেশ কারিগরি শিক্ষা বোর্ডের (BTEB) অধীনে ৪ বছর মেয়াদী ডিপ্লোমা ইন ইঞ্জিনিয়ারিং কোর্স পরিচালনা করা হয়। সুপরিসর ক্যাম্পাস, শীতাতপ নিয়ন্ত্রিত কম্পিউটার ল্যাব, সিভিল ল্যাব ও অভিজ্ঞ শিক্ষক মণ্ডলীর সার্বিক তত্ত্বাবধানে পড়ালেখার পরিবেশ নিশ্চিত করা হয়েছে।
+                </p>
+
+                <!-- Key Highlights Bullet List -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div class="flex items-center space-x-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-circle-check text-gov-green"></i> <span>আধুনিক স্মার্ট ক্লাসরুম</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-circle-check text-gov-green"></i> <span>ওয়াই-ফাই সমৃদ্ধ ই-লাইব্রেরি</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-circle-check text-gov-green"></i> <span>সক্রিয় জব প্লেসমেন্ট সেল</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-circle-check text-gov-green"></i> <span>সিসিটিভি দ্বারা সম্পূর্ণ সুরক্ষিত ক্যাম্পাস</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ACADEMIC DEPARTMENTS ================= -->
+    <section id="departments" class="py-16 bg-gray-100 dark:bg-gray-800/50 px-4">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="text-center space-y-2 max-w-2xl mx-auto">
+                <span class="text-gov-green dark:text-green-400 font-bold text-sm uppercase tracking-wider">একাডেমিক টেকনোলজি</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">আমাদের টেকনোলজি ও বিভাগসমূহ</h2>
+                <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">প্রতিটি বিভাগে রয়েছে আধুনিক সিলেবাস, সমৃদ্ধ ল্যাব ও প্রশিক্ষিত শিক্ষকবৃন্দ</p>
+            </div>
+
+            <!-- Grid of Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- CST Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100 dark:border-gray-700 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">কম্পিউটার সাইন্স অ্যান্ড টেকনোলজি (CST)</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            সফটওয়্যার ডেভেলপমেন্ট, নেটওয়ার্কিং, ওয়েব ডিজাইন এবং আর্টিফিশিয়াল ইন্টেলিজেন্স সম্পর্কিত আধুনিক ডিপ্লোমা কোর্স।
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 space-x-4 mb-4">
+                            <span><i class="fa-solid fa-user-group text-gov-green mr-1"></i> আসন: ১০০</span>
+                            <span><i class="fa-solid fa-clock text-gov-green mr-1"></i> ৪ বছর (৮ পর্ব)</span>
+                        </div>
+                    </div>
+                    <button onclick="openDeptModal('cst')" class="w-full py-2 bg-gov-lightGreen dark:bg-gray-700 text-gov-green dark:text-green-400 font-bold rounded-xl text-xs hover:bg-gov-green hover:text-white dark:hover:bg-green-600 transition">
+                        বিস্তারিত দেখুন & সিলেবাস <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Civil Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100 dark:border-gray-700 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-building font-bold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">সিভিল টেকনোলজি (Civil)</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            অবকাঠামো নির্মাণ, সার্ভেইং, স্ট্রাকচারাল ডিজাইন এবং আর্কিটেকচারাল প্ল্যানিং শেখার উন্নত প্ল্যাটফর্ম।
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 space-x-4 mb-4">
+                            <span><i class="fa-solid fa-user-group text-gov-green mr-1"></i> আসন: ১০০</span>
+                            <span><i class="fa-solid fa-clock text-gov-green mr-1"></i> ৪ বছর (৮ পর্ব)</span>
+                        </div>
+                    </div>
+                    <button onclick="openDeptModal('civil')" class="w-full py-2 bg-gov-lightGreen dark:bg-gray-700 text-gov-green dark:text-green-400 font-bold rounded-xl text-xs hover:bg-gov-green hover:text-white dark:hover:bg-green-600 transition">
+                        বিস্তারিত দেখুন & সিলেবাস <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Electronics Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100 dark:border-gray-700 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">ইলেকট্রনিক্স টেকনোলজি</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            সার্কিট ডিজাইন, টেলিকমিউনিকেশন, এমবেডেড সিস্টেম ও রোবোটিক্স টেকনোলজিতে ব্যবহারিক জ্ঞান অর্জন।
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 space-x-4 mb-4">
+                            <span><i class="fa-solid fa-user-group text-gov-green mr-1"></i> আসন: ৫০</span>
+                            <span><i class="fa-solid fa-clock text-gov-green mr-1"></i> ৪ বছর (৮ পর্ব)</span>
+                        </div>
+                    </div>
+                    <button onclick="openDeptModal('electronics')" class="w-full py-2 bg-gov-lightGreen dark:bg-gray-700 text-gov-green dark:text-green-400 font-bold rounded-xl text-xs hover:bg-gov-green hover:text-white dark:hover:bg-green-600 transition">
+                        বিস্তারিত দেখুন & সিলেবাস <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- RAC Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100 dark:border-gray-700 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-cyan-100 dark:bg-cyan-900/40 text-cyan-600 dark:text-cyan-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">রেফ্রিজারেশন অ্যান্ড এয়ারকন্ডিশনিং (RAC)</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            শিল্পকারখানা ও গৃহস্থালি হিমায়ন ব্যবস্থা এবং এইচভিএসি (HVAC) সিস্টেমের মেকানিক্যাল প্রশিক্ষণ।
+                        </p>
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 space-x-4 mb-4">
+                            <span><i class="fa-solid fa-user-group text-gov-green mr-1"></i> আসন: ৫০</span>
+                            <span><i class="fa-solid fa-clock text-gov-green mr-1"></i> ৪ বছর (৮ পর্ব)</span>
+                        </div>
+                    </div>
+                    <button onclick="openDeptModal('rac')" class="w-full py-2 bg-gov-lightGreen dark:bg-gray-700 text-gov-green dark:text-green-400 font-bold rounded-xl text-xs hover:bg-gov-green hover:text-white dark:hover:bg-green-600 transition">
+                        বিস্তারিত দেখুন & সিলেবাস <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Non-Tech Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100 dark:border-gray-700 flex flex-col justify-between group md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="w-14 h-14 bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">নন-টেক বিভাগ (Non-Tech Department)</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            সকল টেকনোলজির ভিত্তি মজবুত করতে গণিত, পদার্থবিজ্ঞান, রসায়ন, ইংরেজি, সামাজিক বিজ্ঞান এবং ব্যবসা সংগঠন বিষয়ের মানসম্মত শিক্ষা দেওয়া হয়।
+                        </p>
+                    </div>
+                    <button onclick="openDeptModal('nontech')" class="w-full py-2 bg-gov-lightGreen dark:bg-gray-700 text-gov-green dark:text-green-400 font-bold rounded-xl text-xs hover:bg-gov-green hover:text-white dark:hover:bg-green-600 transition">
+                        শিক্ষক তালিকা ও বিষয়সমূহ <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= NOTICE BOARD SECTION ================= -->
+    <section id="notices" class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-gov-green dark:text-green-400 font-bold text-sm">নোটিশ ও বিজ্ঞপ্তি</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">ইনস্টিটিউট আপডেট ও নোটিশ বোর্ড</h2>
+                </div>
+                <!-- Search & Filter Controls -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <div class="relative">
+                        <input type="text" id="noticeSearch" onkeyup="filterNotices()" placeholder="নোটিশ খুঁজুন..." class="pl-9 pr-4 py-2 border rounded-xl text-xs w-48 md:w-64 focus:outline-none focus:ring-2 focus:ring-gov-green dark:bg-gray-800 dark:border-gray-700">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400 text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 text-xs font-semibold" id="noticeFilters">
+                <button onclick="filterNoticeCategory('all')" class="cat-btn active bg-gov-green text-white px-4 py-2 rounded-lg">সবগুলো</button>
+                <button onclick="filterNoticeCategory('academic')" class="cat-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300">একাডেমিক</button>
+                <button onclick="filterNoticeCategory('exam')" class="cat-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300">পরীক্ষা</button>
+                <button onclick="filterNoticeCategory('scholarship')" class="cat-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300">উপবৃত্তি</button>
+                <button onclick="filterNoticeCategory('admission')" class="cat-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300">ভর্তি</button>
+            </div>
+
+            <!-- Notice Items List -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow border border-gray-100 dark:border-gray-700 divide-y divide-gray-100 dark:divide-gray-700 overflow-hidden" id="noticeContainer">
+                
+                <!-- Notice Item 1 -->
+                <div class="notice-item p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-750 transition" data-category="exam">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300 p-3 rounded-xl text-center shrink-0 min-w-[60px]">
+                            <span class="block font-black text-lg leading-tight">১০</span>
+                            <span class="text-[10px] uppercase font-bold">নভেম্বর</span>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-red-100 text-red-800 dark:bg-red-900/60 dark:text-red-200 text-[10px] font-bold px-2 py-0.5 rounded mb-1">পরীক্ষা নোটিশ</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base hover:text-gov-green cursor-pointer" onclick="viewNoticeModal('২০২৫ সালের ২য় ও ৪র্থ পর্ব সমাপনী ফরম পূরণ সংক্রান্ত নোটিশ')">
+                                ২০২৫ সালের ২য়, ৪র্থ ও ৬ষ্ঠ পর্ব সমাপনী পরীক্ষার বোর্ড ফরম পূরণ সংক্রান্ত নোটিশ
+                            </h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">প্রকাশিত: ১০ নভেম্বর ২০২৫ | কারিগরি শিক্ষা বোর্ড</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 shrink-0 self-end md:self-center">
+                        <button onclick="downloadPDF('Exam_Form_Fillup.pdf')" class="px-3 py-1.5 bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 rounded-lg text-xs font-bold hover:bg-gov-green hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf mr-1 text-red-600"></i> পিডিএফ ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notice Item 2 -->
+                <div class="notice-item p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-750 transition" data-category="scholarship">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 p-3 rounded-xl text-center shrink-0 min-w-[60px]">
+                            <span class="block font-black text-lg leading-tight">০৫</span>
+                            <span class="text-[10px] uppercase font-bold">নভেম্বর</span>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded mb-1">উপবৃত্তি</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base hover:text-gov-green cursor-pointer" onclick="viewNoticeModal('স্টিপেন্ড বা উপবৃত্তির তথ্য সংশোধনের শেষ সুযোগ')">
+                                উপবৃত্তি প্রাপ্ত শিক্ষার্থীদের ব্যাংক তথ্য সংশোধন ও নগদ একাউন্ট ভেরিফিকেশন নির্দেশিকা
+                            </h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">প্রকাশিত: ০৫ নভেম্বর ২০২৫ | শিক্ষার্থী কল্যাণ ফান্ড</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 shrink-0 self-end md:self-center">
+                        <button onclick="downloadPDF('Stipend_Correction.pdf')" class="px-3 py-1.5 bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 rounded-lg text-xs font-bold hover:bg-gov-green hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf mr-1 text-red-600"></i> পিডিএফ ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notice Item 3 -->
+                <div class="notice-item p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-750 transition" data-category="academic">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 p-3 rounded-xl text-center shrink-0 min-w-[60px]">
+                            <span class="block font-black text-lg leading-tight">০১</span>
+                            <span class="text-[10px] uppercase font-bold">নভেম্বর</span>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200 text-[10px] font-bold px-2 py-0.5 rounded mb-1">একাডেমিক</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base hover:text-gov-green cursor-pointer" onclick="viewNoticeModal('নতুন প্রবিধান ২০২২ ক্লাস রুটিন প্রকাশ')">
+                                ২০২৫-২০২৬ শিক্ষাবর্ষের সকল বিভাগের সেমিস্টার ভিত্তিক নতুন ক্লাস রুটিন
+                            </h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">প্রকাশিত: ০১ নভেম্বর ২০২৫ | একাডেমিক শাখা</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 shrink-0 self-end md:self-center">
+                        <button onclick="downloadPDF('Class_Routine_2025.pdf')" class="px-3 py-1.5 bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 rounded-lg text-xs font-bold hover:bg-gov-green hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf mr-1 text-red-600"></i> পিডিএফ ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notice Item 4 -->
+                <div class="notice-item p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-750 transition" data-category="admission">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 p-3 rounded-xl text-center shrink-0 min-w-[60px]">
+                            <span class="block font-black text-lg leading-tight">২৫</span>
+                            <span class="text-[10px] uppercase font-bold">অক্টোবর</span>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 text-[10px] font-bold px-2 py-0.5 rounded mb-1">ভর্তি নোটিশ</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base hover:text-gov-green cursor-pointer" onclick="viewNoticeModal('১ম পর্বে শূন্য আসনে ভর্তি সংক্রন্ত')">
+                                ডিপ্লোমা ইন ইঞ্জিনিয়ারিং ১ম পর্বের ২য় মাইগ্রেশন ও শূন্য আসনে নিশ্চয়ন নির্দেশিকা
+                            </h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">প্রকাশিত: ২৫ অক্টোবর ২০২৫ | ভর্তি কমিটি</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 shrink-0 self-end md:self-center">
+                        <button onclick="downloadPDF('Admission_Notice_2025.pdf')" class="px-3 py-1.5 bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 rounded-lg text-xs font-bold hover:bg-gov-green hover:text-white transition">
+                            <i class="fa-solid fa-file-pdf mr-1 text-red-600"></i> পিডিএফ ডাউনলোড
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= STUDENT E-SERVICES & INTERACTIVE TOOLS ================= -->
+    <section id="eservices" class="py-16 bg-gray-100 dark:bg-gray-800/60 px-4">
+        <div class="max-w-7xl mx-auto space-y-10">
+            <div class="text-center space-y-2 max-w-2xl mx-auto">
+                <span class="text-gov-green dark:text-green-400 font-bold text-sm uppercase">ডিজিটাল সেবা পোর্টাল</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">শিক্ষার্থীদের জন্য অনলাইন ই-সেবাসমূহ</h2>
+                <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">এক ক্লিকেই রেজাল্ট চেক, রুটিন ডাউনলোড, ই-পেমেন্ট এবং ডিজিটাল লাইব্রেরি অ্যাক্সেস</p>
+            </div>
+
+            <!-- Service Tabs Control Header -->
+            <div class="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow border border-gray-100 dark:border-gray-700 flex flex-wrap justify-center gap-2">
+                <button onclick="switchServiceTab('result')" id="tab-result" class="service-tab-btn active bg-gov-green text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-square-poll-vertical"></i> রেজাল্ট চেকার
+                </button>
+                <button onclick="switchServiceTab('routine')" id="tab-routine" class="service-tab-btn bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-days"></i> ক্লাস রুটিন
+                </button>
+                <button onclick="switchServiceTab('payment')" id="tab-payment" class="service-tab-btn bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i> ফি ক্যালকুলেটর
+                </button>
+                <button onclick="switchServiceTab('library')" id="tab-library" class="service-tab-btn bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-book"></i> ই-লাইব্রেরি
+                </button>
+                <button onclick="switchServiceTab('grs')" id="tab-grs" class="service-tab-btn bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-comment-dots"></i> অভিযোগ/মতামত (GRS)
+                </button>
+            </div>
+
+            <!-- Tab 1: Result Checker Container -->
+            <div id="service-result" class="service-content bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700">
+                <div class="max-w-xl mx-auto space-y-4">
+                    <h3 class="text-xl font-bold text-center text-gov-green dark:text-green-400">ডিপ্লোমা ইন ইঞ্জিনিয়ারিং ফলাফল অনুসন্ধান</h3>
+                    <p class="text-xs text-center text-gray-500">আপনার কারিগরি শিক্ষা বোর্ডের রোল ও রেজিঃ নম্বর দিয়ে রেজাল্ট দেখুন</p>
+                    
+                    <form onsubmit="handleResultCheck(event)" class="space-y-4 pt-2">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">রোল নম্বর (Roll No)*</label>
+                                <input type="number" id="rollNo" required placeholder="उदा: 152840" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-gov-green outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">রেজিস্ট্রেশন নম্বর (Reg No)*</label>
+                                <input type="number" id="regNo" required placeholder="उदा: 15020489" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-gov-green outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">পর্ব (Semester)</label>
+                                <select id="semester" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-gov-green outline-none">
+                                    <option value="1st">১ম পর্ব</option>
+                                    <option value="2nd">২য় পর্ব</option>
+                                    <option value="3rd">৩য় পর্ব</option>
+                                    <option value="4th">৪র্থ পর্ব</option>
+                                    <option value="5th">৫ম পর্ব</option>
+                                    <option value="6th">৬ষ্ঠ পর্ব</option>
+                                    <option value="7th">৭ম পর্ব</option>
+                                    <option value="8th">৮ম পর্ব</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">টেকনোলজি</label>
+                                <select id="deptSelect" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-gov-green outline-none">
+                                    <option value="cst">কম্পিউটার (CST)</option>
+                                    <option value="civil">সিভিল (Civil)</option>
+                                    <option value="electronics">ইলেকট্রনিক্স</option>
+                                    <option value="rac">আরএসি (RAC)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gov-green hover:bg-gov-darkGreen text-white font-bold py-2.5 rounded-xl shadow transition text-sm">
+                            <i class="fa-solid fa-magnifying-glass mr-1"></i> ফলাফল জমা দিন ও ফলাফল দেখুন
+                        </button>
+                    </form>
+
+                    <!-- Result Output Box -->
+                    <div id="resultOutput" class="hidden mt-6 p-4 bg-green-50 dark:bg-gray-700/50 border border-green-200 dark:border-gray-600 rounded-xl space-y-3">
+                        <div class="flex justify-between items-center border-b pb-2 dark:border-gray-600">
+                            <span class="font-bold text-sm text-gov-green dark:text-green-400">পরীক্ষার ফলাফল বিবরণী</span>
+                            <span class="text-xs bg-green-200 dark:bg-green-800 text-green-900 dark:text-green-100 px-2 py-0.5 rounded font-bold">উত্তীর্ণ (PASSED)</span>
+                        </div>
+                        <div class="grid grid-cols-2 text-xs gap-2">
+                            <p><b>শিক্ষার্থীর নাম:</b> মোঃ আবরার ফাহিম</p>
+                            <p><b>জিপিএ (GPA):</b> <span class="text-base font-bold text-gov-green dark:text-green-400">৩.৮৫</span> / ৪.০০</p>
+                            <p><b>ইনস্টিটিউট:</b> ভোলা সরকারি পলিটেকনিক</p>
+                            <p><b>স্ট্যাটাস:</b> নিয়মিত</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Class Routine Viewer -->
+            <div id="service-routine" class="service-content hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">সেমিস্টার ভিত্তিক ক্লাস রুটিন ২০২৫</h3>
+                    <p class="text-xs text-gray-500">নিচের টেবিল থেকে আপনার টেকনোলজি সিলেক্ট করে রুটিন দেখুন</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left border-collapse border border-gray-200 dark:border-gray-700">
+                            <thead class="bg-gov-green text-white">
+                                <tr>
+                                    <th class="p-3 border">বার / সময়</th>
+                                    <th class="p-3 border">০৯:০০ - ১০:০০</th>
+                                    <th class="p-3 border">১০:০০ - ১১:০০</th>
+                                    <th class="p-3 border">১১:০০ - ১২:০০</th>
+                                    <th class="p-3 border">১২:০০ - ০১:০০</th>
+                                    <th class="p-3 border">০২:০০ - ০৪:০০ (ল্যাব)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700 text-gray-700 dark:text-gray-300">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="p-3 font-bold border bg-gray-50 dark:bg-gray-700">রবিবার</td>
+                                    <td class="p-3 border">প্রোগ্রামিং এসেনশিয়ালস (CST)</td>
+                                    <td class="p-3 border">ম্যাথমেটিক্স-৩</td>
+                                    <td class="p-3 border">ফিজিক্স-২</td>
+                                    <td class="p-3 border font-semibold text-red-500">বিরতি</td>
+                                    <td class="p-3 border font-semibold text-gov-green">ডাটাবেজ ম্যানেজমেন্ট ল্যাব</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="p-3 font-bold border bg-gray-50 dark:bg-gray-700">সোমবার</td>
+                                    <td class="p-3 border">সার্ভেইং-১ (Civil)</td>
+                                    <td class="p-3 border">ইংলিশ কমিউনিকেশন</td>
+                                    <td class="p-3 border">ইলেকট্রিক্যাল সার্কিট</td>
+                                    <td class="p-3 border font-semibold text-red-500">বিরতি</td>
+                                    <td class="p-3 border font-semibold text-gov-green">অটোক্যাড সিভিল ড্রাফটিং</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="p-3 font-bold border bg-gray-50 dark:bg-gray-700">মঙ্গলবার</td>
+                                    <td class="p-3 border">ডিজিটাল ইলেকট্রনিক্স</td>
+                                    <td class="p-3 border">ম্যাথমেটিক্স-৩</td>
+                                    <td class="p-3 border">সোশ্যাল সাইন্স</td>
+                                    <td class="p-3 border font-semibold text-red-500">বিরতি</td>
+                                    <td class="p-3 border font-semibold text-gov-green">মাইক্রোকন্ট্রোলার প্র্যাকটিক্যাল</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-750">
+                                    <td class="p-3 font-bold border bg-gray-50 dark:bg-gray-700">মঙ্গলবার</td>
+                                    <td class="p-3 border">ডিজিটাল ইলেকট্রনিক্স</td>
+                                    <td class="p-3 border">ম্যাথমেটিক্স-৩</td>
+                                    <td class="p-3 border">সোশ্যাল সাইন্স</td>
+                                    <td class="p-3 border font-semibold text-red-500">বিরতি</td>
+                                    <td class="p-3 border font-semibold text-gov-green">মাইক্রোকন্ট্রোলার প্র্যাকটিক্যাল</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Online Fee Payment Calculator -->
+            <div id="service-payment" class="service-content hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700">
+                <div class="max-w-xl mx-auto space-y-4">
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white">অনলাইন সেমিস্টার ফি ও ফরম পূরণ ফি ক্যালকুলেটর</h3>
+                    <div class="space-y-3 pt-2">
+                        <div>
+                            <label class="block text-xs font-bold mb-1">ফি-এর ধরন নির্ধারণ করুন</label>
+                            <select id="feeType" onchange="calculateFee()" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600">
+                                <option value="semester">সেমিস্টার ভর্তি ও টিউশন ফি (Semester Fee)</option>
+                                <option value="exam">বোর্ড সেমিস্টার সমাপনী ফরম পূরণ ফি</option>
+                                <option value="certificate">সাময়িক সনদপত্র / নম্বরপত্র ফি</option>
+                            </select>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span>মূল টিউশন ফি:</span>
+                                <span font-bold id="baseFee">৳ ৮৫০.০০</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>আইটি ও সেশন ফি:</span>
+                                <span font-bold id="itFee">৳ ৩০০.০০</span>
+                            </div>
+                            <div class="flex justify-between border-t pt-2 font-bold text-sm text-gov-green dark:text-green-400">
+                                <span>সর্বমোট প্রদেয় ফি:</span>
+                                <span id="totalFee">৳ ১,১৫০.০০</span>
+                            </div>
+                        </div>
+                        <button onclick="showToast('ই-পেমেন্ট গেটওয়ে শীঘ্রই যুক্ত হচ্ছে। বিকাশ/নগদ এর মাধ্যমে পেমেন্ট করতে পারবেন।')" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2.5 rounded-xl shadow transition text-sm">
+                            <i class="fa-solid fa-credit-card mr-1"></i> ই-পেমেন্ট সম্পন্ন করুন
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: E-Library Interface -->
+            <div id="service-library" class="service-content hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">ডিজিটাল ই-বুক ও সিলেবাস কর্নার</h3>
+                    <p class="text-xs text-gray-500">ডিপ্লোমা ইন ইঞ্জিনিয়ারিং সকল পর্বের টেক্সটবুক সম্পূর্ণ বিনামূল্যে ডাউলোড করুন</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="p-4 border rounded-xl dark:border-gray-700 flex items-center space-x-3 bg-gray-50 dark:bg-gray-750">
+                            <i class="fa-solid fa-book-bookmark text-2xl text-gov-green"></i>
+                            <div>
+                                <h4 class="font-bold text-xs">Data Structure & Algorithm</h4>
+                                <p class="text-[10px] text-gray-500">CST - ৪র্থ পর্ব</p>
+                                <a href="#" onclick="showToast('বইয়ের পিডিএফ ডাউনলোড শুরু হয়েছে')" class="text-xs text-gov-green font-bold hover:underline mt-1 inline-block">পিডিএফ ডাউনলোড</a>
+                            </div>
+                        </div>
+                        <div class="p-4 border rounded-xl dark:border-gray-700 flex items-center space-x-3 bg-gray-50 dark:bg-gray-750">
+                            <i class="fa-solid fa-book-bookmark text-2xl text-amber-600"></i>
+                            <div>
+                                <h4 class="font-bold text-xs">Hydraulics & Fluid Mechanics</h4>
+                                <p class="text-[10px] text-gray-500">Civil - ৫ম পর্ব</p>
+                                <a href="#" onclick="showToast('বইয়ের পিডিএফ ডাউনলোড শুরু হয়েছে')" class="text-xs text-gov-green font-bold hover:underline mt-1 inline-block">পিডিএফ ডাউনলোড</a>
+                            </div>
+                        </div>
+                        <div class="p-4 border rounded-xl dark:border-gray-700 flex items-center space-x-3 bg-gray-50 dark:bg-gray-750">
+                            <i class="fa-solid fa-book-bookmark text-2xl text-purple-600"></i>
+                            <div>
+                                <h4 class="font-bold text-xs">Industrial Electronics</h4>
+                                <p class="text-[10px] text-gray-500">Electronics - ৬ষ্ঠ পর্ব</p>
+                                <a href="#" onclick="showToast('বইয়ের পিডিএফ ডাউনলোড শুরু হয়েছে')" class="text-xs text-gov-green font-bold hover:underline mt-1 inline-block">পিডিএফ ডাউনলোড</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 5: Grievance Redress System (GRS) -->
+            <div id="service-grs" class="service-content hidden bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700">
+                <div class="max-w-xl mx-auto space-y-4">
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white">অনলাইন অভিযোগ ও মতামত প্রতিকার সেল (GRS)</h3>
+                    <form onsubmit="handleGrievanceSubmit(event)" class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold mb-1">আপনার নাম*</label>
+                            <input type="text" required placeholder="আপনার নাম লিখুন" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">মোবাইল নম্বর / ইমেইল*</label>
+                            <input type="text" required placeholder="যোগাযোগের নম্বর" class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">অভিযোগ/মতামতের বিবরণ*</label>
+                            <textarea rows="4" required placeholder="আপনার সুনির্দিষ্ট প্রস্তাব বা সমস্যা বিস্তারিত লিখুন..." class="w-full px-4 py-2 text-sm border rounded-xl dark:bg-gray-700 dark:border-gray-600"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gov-green text-white font-bold py-2.5 rounded-xl shadow hover:bg-gov-darkGreen transition text-sm">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> জমা দিন
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= JOB PLACEMENT & ALUMNI ================= -->
+    <section id="placement" class="py-16 px-4 max-w-7xl mx-auto space-y-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <span class="text-gov-green dark:text-green-400 font-bold text-sm">ক্যারিয়ার ও ইন্ডাস্ট্রি সংযোগ</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">জব প্লেসমেন্ট সেল & অ্যালামনাই</h2>
+            </div>
+            <button onclick="openJobModal()" class="bg-gov-green hover:bg-gov-darkGreen text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow transition">
+                <i class="fa-solid fa-user-plus mr-1"></i> গ্র্যাজুয়েট সিভি সাবমিট করুন
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Job Circular Card 1 -->
+            <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow border border-gray-100 dark:border-gray-700 space-y-3">
+                <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded">সফটওয়্যার ইন্ডাস্ট্রি</span>
+                <h4 class="font-bold text-base text-gray-900 dark:text-white">জুনিয়র নেটওয়ার্ক ইঞ্জিনিয়ার</h4>
+                <p class="text-xs text-gray-500">কোম্পানি: লিংক-থ্রি টেকনোলজিস লিঃ</p>
+                <div class="text-xs text-gray-600 dark:text-gray-300">
+                    <p><b>যোগ্যতা:</b> ডিপ্লোমা ইন কম্পিউটার (CST)</p>
+                    <p><b>আবেদনের শেষ তারিখ:</b> ২৫ নভেম্বর ২০২৫</p>
+                </div>
+                <button onclick="showToast('আবেদন সফলভাবে গ্রহণ করা হয়েছে')" class="w-full bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 font-bold py-2 rounded-lg text-xs hover:bg-gov-green hover:text-white transition">
+                    আবেদন করুন
+                </button>
+            </div>
+
+            <!-- Job Circular Card 2 -->
+            <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow border border-gray-100 dark:border-gray-700 space-y-3">
+                <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded">কনস্ট্রাকশন ক্ষেত্র</span>
+                <h4 class="font-bold text-base text-gray-900 dark:text-white">সাইট সিভিল সাব-সহকারী প্রকৌশলী</h4>
+                <p class="text-xs text-gray-500">কোম্পানি: বিল্ডিং টেকনোলজিস লিমিটেড</p>
+                <div class="text-xs text-gray-600 dark:text-gray-300">
+                    <p><b>যোগ্যতা:</b> ডিপ্লোমা ইন সিভিল</p>
+                    <p><b>আবেদনের শেষ তারিখ:</b> ৩০ নভেম্বর ২০২৫</p>
+                </div>
+                <button onclick="showToast('আবেদন সফলভাবে গ্রহণ করা হয়েছে')" class="w-full bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 font-bold py-2 rounded-lg text-xs hover:bg-gov-green hover:text-white transition">
+                    আবেদন করুন
+                </button>
+            </div>
+
+            <!-- Job Circular Card 3 -->
+            <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow border border-gray-100 dark:border-gray-700 space-y-3">
+                <span class="bg-cyan-100 text-cyan-800 text-[10px] font-bold px-2 py-0.5 rounded">HVAC ইন্ডাস্ট্রি</span>
+                <h4 class="font-bold text-base text-gray-900 dark:text-white">আরএসি সার্ভিস টেকনিশিয়ান</h4>
+                <p class="text-xs text-gray-500">কোম্পানি: ওয়ালটন হাই-টেক ইন্ডাস্ট্রিজ</p>
+                <div class="text-xs text-gray-600 dark:text-gray-300">
+                    <p><b>যোগ্যতা:</b> ডিপ্লোমা ইন RAC / মেকানিক্যাল</p>
+                    <p><b>আবেদনের শেষ তারিখ:</b> ২৮ নভেম্বর ২০২৫</p>
+                </div>
+                <button onclick="showToast('আবেদন সফলভাবে গ্রহণ করা হয়েছে')" class="w-full bg-gov-lightGreen text-gov-green dark:bg-gray-700 dark:text-green-400 font-bold py-2 rounded-lg text-xs hover:bg-gov-green hover:text-white transition">
+                    আবেদন করুন
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER & MAP ================= -->
+    <footer id="contact" class="bg-gov-darkGreen text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-green-800">
+            <!-- Col 1: Campus Info -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-yellow-400 text-gov-darkGreen rounded-full flex items-center justify-center font-bold text-lg">BGPI</div>
+                    <h3 class="font-bold text-base">ভোলা পলিটেকনিক</h3>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট, চরবেউতা, ভোলা সদর, ভোলা-৮৩০০, বাংলাদেশ।
+                </p>
+                <div class="flex space-x-3 text-sm text-yellow-300">
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Important Links -->
+            <div>
+                <h4 class="font-bold text-sm mb-3 text-yellow-300 border-b border-green-700 pb-1">গুরুত্বপূর্ণ লিংকসমূহ</h4>
+                <ul class="space-y-2 text-xs text-gray-200">
+                    <li><a href="http://www.bteb.gov.bd" target="_blank" class="hover:underline">বাংলাদেশ কারিগরি শিক্ষা বোর্ড (BTEB)</a></li>
+                    <li><a href="http://www.techedu.gov.bd" target="_blank" class="hover:underline">কারিগরি শিক্ষা অধিদপ্তর (DTE)</a></li>
+                    <li><a href="http://www.tmed.gov.bd" target="_blank" class="hover:underline">কারিগরি ও মাদ্রাসা শিক্ষা বিভাগ</a></li>
+                    <li><a href="http://www.bangladesh.gov.bd" target="_blank" class="hover:underline">জাতীয় তথ্য বাতায়ন</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Student Services -->
+            <div>
+                <h4 class="font-bold text-sm mb-3 text-yellow-300 border-b border-green-700 pb-1">ই-সেবা ও পোর্টাল</h4>
+                <ul class="space-y-2 text-xs text-gray-200">
+                    <li><a href="#eservices" class="hover:underline">অনলাইন রেজাল্ট অনুসন্ধান</a></li>
+                    <li><a href="#eservices" class="hover:underline">ক্লাস রুটিন & একাডেমিক ক্যালেন্ডার</a></li>
+                    <li><a href="#eservices" class="hover:underline">ই-লাইব্রেরি ডাউনলোড</a></li>
+                    <li><a href="#placement" class="hover:underline">জব সেল সার্ভিস</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Quick Contact Form -->
+            <div>
+                <h4 class="font-bold text-sm mb-3 text-yellow-300 border-b border-green-700 pb-1">দ্রুত যোগাযোগ</h4>
+                <form onsubmit="handleContact(event)" class="space-y-2">
+                    <input type="text" placeholder="আপনার নাম" required class="w-full px-3 py-1.5 text-xs rounded bg-green-950 border border-green-800 text-white placeholder-gray-400 focus:outline-none">
+                    <input type="email" placeholder="ইমেইল" required class="w-full px-3 py-1.5 text-xs rounded bg-green-950 border border-green-800 text-white placeholder-gray-400 focus:outline-none">
+                    <textarea placeholder="মেসেজ" rows="2" required class="w-full px-3 py-1.5 text-xs rounded bg-green-950 border border-green-800 text-white placeholder-gray-400 focus:outline-none"></textarea>
+                    <button type="submit" class="w-full bg-yellow-400 text-gov-darkGreen font-bold py-1.5 rounded text-xs hover:bg-yellow-300">পাঠান</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-4 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-400">
+            <p>© ২০২৬ ভোলা সরকারি পলিটেকনিক ইনস্টিটিউট | সর্বস্বত্ব সংরক্ষিত</p>
+            <p>ডিজাইন ও বাস্তবায়নে: <span class="text-yellow-300 font-bold">পলিটেকনিক শিক্ষার্থী ওয়েব টিম</span></p>
+        </div>
+    </footer>
+
+    <!-- ================= MODALS & POPUPS ================= -->
+
+    <!-- Department Detail Modal -->
+    <div id="deptModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-2xl rounded-2xl p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b pb-3 dark:border-gray-700">
+                <h3 id="deptModalTitle" class="text-xl font-bold text-gov-green dark:text-green-400">টেকনোলজি বিস্তারিত</h3>
+                <button onclick="closeDeptModal()" class="text-gray-400 hover:text-red-500 text-xl font-bold"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="deptModalBody" class="space-y-3 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+                <!-- Content injected dynamically via JS -->
+            </div>
+            <div class="text-right pt-2 border-t dark:border-gray-700">
+                <button onclick="closeDeptModal()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold rounded-lg text-xs">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Portal Login Modal -->
+    <div id="portalModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-md rounded-2xl p-6 shadow-2xl space-y-4">
+            <div class="flex justify-between items-center border-b pb-3 dark:border-gray-700">
+                <h3 class="text-lg font-bold text-gov-green dark:text-green-400"><i class="fa-solid fa-user-shield mr-1"></i> শিক্ষার্থী পোর্টাল লগইন</h3>
+                <button onclick="closePortalModal()" class="text-gray-400 hover:text-red-500 text-xl font-bold"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form onsubmit="handlePortalLogin(event)" class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-bold mb-1">রোল / আইডেন্টিটি নম্বর</label>
+                    <input type="text" required placeholder="উদাহরণ: 152840" class="w-full px-4 py-2 border rounded-xl dark:bg-gray-700 dark:border-gray-600">
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">পাসওয়ার্ড</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2 border rounded-xl dark:bg-gray-700 dark:border-gray-600">
+                </div>
+                <button type="submit" class="w-full bg-gov-green text-white font-bold py-2.5 rounded-xl shadow hover:bg-gov-darkGreen transition">লগইন করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notice Reader Modal -->
+    <div id="noticeModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-lg rounded-2xl p-6 shadow-2xl space-y-4">
+            <div class="flex justify-between items-center border-b pb-3 dark:border-gray-700">
+                <h3 class="text-base font-bold text-gov-green dark:text-green-400" id="noticeModalTitle">নোটিশ প্রিভিউ</h3>
+                <button onclick="closeNoticeModal()" class="text-gray-400 hover:text-red-500 text-xl font-bold"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed" id="noticeModalBody">
+                সংশ্লিষ্ট সকলকে জানানো যাচ্ছে যে, কারিগরি শিক্ষা বোর্ডের নির্দেশনানুযায়ী উক্ত কার্যক্রম যথাসময়ে সম্পন্ন করতে হবে। ফরম পূরণের সময় মূল কাগজপত্র জমা প্রদান বাধ্যতামূলক।
+            </p>
+            <div class="flex justify-end gap-2 pt-2 border-t dark:border-gray-700">
+                <button onclick="downloadPDF('Notice_Document.pdf')" class="px-3 py-1.5 bg-gov-green text-white rounded-lg text-xs font-bold">পিডিএফ ডাউনলোড</button>
+                <button onclick="closeNoticeModal()" class="px-3 py-1.5 bg-gray-200 text-gray-800 rounded-lg text-xs font-bold">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Box -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-gray-900 text-white px-5 py-3 rounded-xl shadow-2xl hidden flex items-center space-x-2 text-xs border border-gray-700">
+        <i class="fa-solid fa-circle-info text-yellow-400 text-base"></i>
+        <span id="toastMsg">মেসেজ নোটিফিকেশন</span>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // 1. Dark Mode Switcher Logic
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeText = document.getElementById('themeText');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeText.innerText = 'ডার্ক মোড';
+            } else {
+                html.classList.add('dark');
+                themeText.innerText = 'লাইট মোড';
+            }
+        }
+
+        // 2. Mobile Drawer Navigation Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 3. Department Dynamic Modal Viewer
+        const deptData = {
+            cst: {
+                title: "Computer Science & Technology (CST)",
+                body: `
+                    <p class="mb-2"><b>বিভাগীয় প্রধান:</b> প্রকৌ. তানভীর আহমেদ (ইনস্ট্রাক্টর ও হেড)</p>
+                    <p class="mb-2"><b>শিক্ষক সংখ্যা:</b> ০৮ জন</p>
+                    <p class="mb-3"><b>পরীক্ষাগারসমূহ:</b> সফটওয়্যার ল্যাব, নেটওয়ার্কিং ও হার্ডওয়্যার ল্যাব, মাইক্রোপ্রসেসর ল্যাব।</p>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
+                        <h4 class="font-bold mb-1">কোর্স সমুহ (প্রবিধান-২০২২):</h4>
+                        <ul class="list-disc pl-4 space-y-1">
+                            <li>প্রোগ্রামিং এসেনশিয়ালস (Python & C)</li>
+                            <li>ওয়েব ডেভেলপমেন্ট & ডাটাবেজ সিস্টেম</li>
+                            <li>সাইবার সিকিউরিটি & নেটওয়ার্কিং এসেনশিয়ালস</li>
+                            <li>অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (Java / C++)</li>
+                        </ul>
+                    </div>
+                `
+            },
+            civil: {
+                title: "Civil Technology",
+                body: `
+                    <p class="mb-2"><b>বিভাগীয় প্রধান:</b> প্রকৌ. মোঃ রফিকুল ইসলাম</p>
+                    <p class="mb-2"><b>শিক্ষক সংখ্যা:</b> ১০ জন</p>
+                    <p class="mb-3"><b>পরীক্ষাগারসমূহ:</b> সার্ভেইং ল্যাব, হাইড্রোলিক্স ল্যাব, সয়েল মেকানিক্স ল্যাব।</p>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
+                        <h4 class="font-bold mb-1">কোর্স সমুহ:</h4>
+                        <ul class="list-disc pl-4 space-y-1">
+                            <li>অটোক্যাড & আর্কিটেকচারাল ড্রাফটিং</li>
+                            <li>স্ট্রাকচারাল মেকানিক্স & সার্ভেইং</li>
+                            <li>কনস্ট্রাকশন প্রসেস & এস্টিমেটিং</li>
+                        </ul>
+                    </div>
+                `
+            },
+            electronics: {
+                title: "Electronics Technology",
+                body: `
+                    <p class="mb-2"><b>বিভাগীয় প্রধান:</b> প্রকৌ. শামসুল হক</p>
+                    <p class="mb-2"><b>শিক্ষক সংখ্যা:</b> ০৬ জন</p>
+                    <p class="mb-3"><b>পরীক্ষাগারসমূহ:</b> ডিজিটাল ইলেকট্রনিক্স ল্যাব, টেলিকম ল্যাব।</p>
+                `
+            },
+            rac: {
+                title: "Refrigeration & Air Conditioning (RAC)",
+                body: `
+                    <p class="mb-2"><b>বিভাগীয় প্রধান:</b> প্রকৌ. আব্দুল মান্নান</p>
+                    <p class="mb-2"><b>শিক্ষক সংখ্যা:</b> ০৫ জন</p>
+                    <p class="mb-3"><b>পরীক্ষাগারসমূহ:</b> মেকানিক্যাল ওয়ার্কশপ, এইচভিএসি ট্রেনার ল্যাব।</p>
+                `
+            },
+            nontech: {
+                title: "Non-Tech Department",
+                body: `
+                    <p class="mb-2"><b>বিভাগীয় প্রধান:</b> মোসাম্মৎ সেলিনা পারভীন (সহকারী অধ্যাপক - পদার্থবিজ্ঞান)</p>
+                    <p class="mb-2"><b>বিষয়সমূহ:</b> গণিত, পদার্থবিজ্ঞান, রসায়ন, ইংরেজি, সামাজিক বিজ্ঞান, হিসাববিজ্ঞান।</p>
+                `
+            }
+        };
+
+        function openDeptModal(deptKey) {
+            const data = deptData[deptKey];
+            if (data) {
+                document.getElementById('deptModalTitle').innerText = data.title;
+                document.getElementById('deptModalBody').innerHTML = data.body;
+                document.getElementById('deptModal').classList.remove('hidden');
+            }
+        }
+        function closeDeptModal() {
+            document.getElementById('deptModal').classList.add('hidden');
+        }
+
+        // 4. E-Services Tab Switcher
+        function switchServiceTab(tabName) {
+            // Hide all contents
+            document.querySelectorAll('.service-content').forEach(el => el.classList.add('hidden'));
+            // Remove active style from buttons
+            document.querySelectorAll('.service-tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-gov-green', 'text-white');
+                btn.classList.add('bg-gray-100', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+
+            // Show current tab content & activate button
+            document.getElementById(`service-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.classList.add('active', 'bg-gov-green', 'text-white');
+            activeBtn.classList.remove('bg-gray-100', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+        }
+
+        // 5. Result Checker Simulation
+        function handleResultCheck(e) {
+            e.preventDefault();
+            const roll = document.getElementById('rollNo').value;
+            const reg = document.getElementById('regNo').value;
+
+            if (roll && reg) {
+                document.getElementById('resultOutput').classList.remove('hidden');
+                showToast('ফলাফল সফলভাবে খোঁজা হয়েছে!');
+            }
+        }
+
+        // 6. Online Fee Calculator Logic
+        function calculateFee() {
+            const type = document.getElementById('feeType').value;
+            let base = 850, it = 300;
+
+            if (type === 'exam') {
+                base = 1450;
+                it = 200;
+            } else if (type === 'certificate') {
+                base = 500;
+                it = 100;
+            }
+
+            document.getElementById('baseFee').innerText = `৳ ${base}.০০`;
+            document.getElementById('itFee').innerText = `৳ ${it}.০০`;
+            document.getElementById('totalFee').innerText = `৳ ${base + it}.০০`;
+        }
+
+        // 7. Notice Filtering & Search
+        function filterNoticeCategory(cat) {
+            // Update button UI
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-gov-green', 'text-white');
+                btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+            event.target.classList.add('bg-gov-green', 'text-white');
+
+            const items = document.querySelectorAll('.notice-item');
+            items.forEach(item => {
+                if (cat === 'all' || item.dataset.category === cat) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function filterNotices() {
+            const query = document.getElementById('noticeSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.notice-item');
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 8. Notice Modal Reader
+        function viewNoticeModal(title) {
+            document.getElementById('noticeModalTitle').innerText = title;
+            document.getElementById('noticeModal').classList.remove('hidden');
+        }
+        function closeNoticeModal() {
+            document.getElementById('noticeModal').classList.add('hidden');
+        }
+
+        // 9. Portal Modal
+        function openPortalModal() {
+            document.getElementById('portalModal').classList.remove('hidden');
+        }
+        function closePortalModal() {
+            document.getElementById('portalModal').classList.add('hidden');
+        }
+        function handlePortalLogin(e) {
+            e.preventDefault();
+            closePortalModal();
+            showToast('শিক্ষার্থী পোর্টালে সফলভাবে লগইন হয়েছে!');
+        }
+
+        // 10. Forms & Actions
+        function handleGrievanceSubmit(e) {
+            e.preventDefault();
+            showToast('আপনার অভিযোগটি সফলভাবে GRS সেলে জমা হয়েছে। ট্র্যাকিং আইডি: #GRS-8492');
+            e.target.reset();
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            showToast('আপনার বার্তাটি পাঠানো হয়েছে। ধন্যবাদ!');
+            e.target.reset();
+        }
+
+        function downloadPDF(filename) {
+            showToast(`${filename} ফাইলটি ডাউনলোড হচ্ছে...`);
+        }
+
+        // 11. Custom Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
